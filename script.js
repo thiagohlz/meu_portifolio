@@ -16,15 +16,17 @@ window.addEventListener("mousemove", (e) => {
 });
 
 // Efeito hover em links e botões
-const interactiveElements = document.querySelectorAll("a, button, .project-card, .skill-card, .contact-card");
+const interactiveElements = document.querySelectorAll("a, button, .project-card, .skill-card, .contact-card, .btn");
 interactiveElements.forEach(el => {
     el.addEventListener("mouseenter", () => {
         cursorDot.style.transform = "translate(-50%, -50%) scale(1.5)";
         cursorOutline.style.transform = "translate(-50%, -50%) scale(1.5)";
+        document.body.classList.add("hovering");
     });
     el.addEventListener("mouseleave", () => {
         cursorDot.style.transform = "translate(-50%, -50%) scale(1)";
         cursorOutline.style.transform = "translate(-50%, -50%) scale(1)";
+        document.body.classList.remove("hovering");
     });
 });
 
@@ -113,16 +115,24 @@ navLinks.forEach(link => {
 const typewriterElement = document.getElementById("typewriter");
 const code = `from fastapi import FastAPI
 from pydantic import BaseModel
+import pandas as pd
+import streamlit as st
 
 app = FastAPI()
 
-class User(BaseModel):
+class DataModel(BaseModel):
     name: str
-    email: str
+    value: float
 
-@app.post("/users")
-async def create_user(user: User):
-    return {"message": "User created!"}`;
+@app.post("/analyze")
+async def analyze_data(data: DataModel):
+    # Process data with pandas
+    df = pd.DataFrame([data.dict()])
+    return {"result": df.to_dict()}
+
+# Streamlit Dashboard
+st.title("Data Analysis Dashboard")
+st.write("Interactive data visualization")`;
 
 let i = 0;
 let isDeleting = false;
@@ -195,244 +205,17 @@ for (let i = 0; i < particleCount; i++) {
     createParticle();
 }
 
-// ========== TEMA ==========
-const themeBtn = document.querySelector(".theme-btn-main");
-const themeOptions = document.querySelector(".theme-options");
-const themeOptButtons = document.querySelectorAll(".theme-opt");
+// ========== FORMAS FLUTUANTES ==========
+const floatingShapes = document.getElementById("floatingShapes");
+const shapeTypes = ['circle', 'square', 'triangle'];
 
-// Toggle menu de temas
-themeBtn.addEventListener("click", () => {
-    themeOptions.classList.toggle("active");
-});
-
-// Fechar menu ao clicar fora
-document.addEventListener("click", (e) => {
-    if (!e.target.closest(".theme-switcher")) {
-        themeOptions.classList.remove("active");
-    }
-});
-
-// Mudar tema
-function setTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-    themeOptions.classList.remove("active");
-}
-
-// Event listeners para botões de tema
-themeOptButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const theme = btn.getAttribute("data-theme");
-        setTheme(theme);
-    });
-});
-
-// Carregar tema salvo
-const savedTheme = localStorage.getItem("theme") || "cyberpunk";
-setTheme(savedTheme);
-
-// ========== ANIMAÇÕES AO SCROLL ==========
-const observerOptionsScroll = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -100px 0px"
-};
-
-const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("animate-in");
-        }
-    });
-}, observerOptionsScroll);
-
-// Observar elementos
-const animateElements = document.querySelectorAll(
-    ".section-title, .about-text, .skill-card, .project-card, .contact-card, .hero-content, .hero-visual"
-);
-
-animateElements.forEach(el => scrollObserver.observe(el));
-
-// ========== ANIMAÇÃO DAS BARRAS DE SKILL ==========
-const skillBars = document.querySelectorAll(".skill-progress");
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const bar = entry.target;
-            const width = bar.style.width;
-            bar.style.width = "0";
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 200);
-            skillObserver.unobserve(bar);
-        }
-    });
-}, { threshold: 0.5 });
-
-skillBars.forEach(bar => skillObserver.observe(bar));
-
-// ========== PARALLAX EFFECT ==========
-window.addEventListener("scroll", () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll(".bg-animation");
+function createFloatingShape() {
+    const shape = document.createElement("div");
+    shape.classList.add("floating-shape");
     
-    parallaxElements.forEach(el => {
-        const speed = 0.5;
-        el.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
-// ========== ANIMAÇÃO DOS CARDS ==========
-const cards = document.querySelectorAll(".project-card, .skill-card");
-cards.forEach(card => {
-    card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
+    const type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+    const size = Math.random() * 50 + 20;
+    const left = Math.random() * 100;
+    const top = Math.random() * 100;
+    const duration = Math.random() * 10 + 15;
     
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
-    });
-});
-
-// ========== TECH BADGES ANIMATION ==========
-const techBadges = document.querySelectorAll(".tech-badge");
-techBadges.forEach((badge, index) => {
-    badge.style.animationDelay = `${index * 0.1}s`;
-});
-
-// ========== BOTÕES HERO ANIMATION ==========
-const heroButtons = document.querySelectorAll(".hero-buttons .btn");
-heroButtons.forEach((btn, index) => {
-    btn.style.animationDelay = `${0.5 + index * 0.1}s`;
-});
-
-// ========== LOADING ANIMATION ==========
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
-
-// ========== GLITCH EFFECT NO TÍTULO ==========
-const heroTitle = document.querySelector(".hero-title");
-if (heroTitle) {
-    setInterval(() => {
-        heroTitle.classList.add("glitch");
-        setTimeout(() => {
-            heroTitle.classList.remove("glitch");
-        }, 200);
-    }, 5000);
-}
-
-// ========== EASTER EGG - KONAMI CODE ==========
-let konamiCode = [];
-const konamiPattern = [
-    "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
-    "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
-    "b", "a"
-];
-
-document.addEventListener("keydown", (e) => {
-    konamiCode.push(e.key);
-    konamiCode.splice(-konamiPattern.length - 1, konamiCode.length - konamiPattern.length);
-    
-    if (konamiCode.join("").includes(konamiPattern.join(""))) {
-        activateMatrixRain();
-    }
-});
-
-function activateMatrixRain() {
-    const canvas = document.createElement("canvas");
-    canvas.style.position = "fixed";
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.style.pointerEvents = "none";
-    canvas.style.zIndex = "9999";
-    document.body.appendChild(canvas);
-    
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    const columns = Math.floor(canvas.width / 20);
-    const drops = Array(columns).fill(1);
-    
-    function draw() {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.fillStyle = "#0F0";
-        ctx.font = "15px monospace";
-        
-        for (let i = 0; i < drops.length; i++) {
-            const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-            ctx.fillText(text, i * 20, drops[i] * 20);
-            
-            if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
-            drops[i]++;
-        }
-    }
-    
-    const interval = setInterval(draw, 33);
-    
-    setTimeout(() => {
-        clearInterval(interval);
-        canvas.remove();
-    }, 5000);
-}
-
-// ========== PERFORMANCE OPTIMIZATION ==========
-// Throttle para eventos de scroll
-function throttle(func, delay) {
-    let lastCall = 0;
-    return function(...args) {
-        const now = new Date().getTime();
-        if (now - lastCall < delay) return;
-        lastCall = now;
-        return func(...args);
-    };
-}
-
-// Aplicar throttle ao scroll
-const throttledScroll = throttle(() => {
-    // Código de scroll otimizado
-}, 100);
-
-window.addEventListener("scroll", throttledScroll);
-
-// ========== ACESSIBILIDADE ==========
-// Permitir navegação por teclado
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Tab") {
-        document.body.classList.add("keyboard-nav");
-    }
-});
-
-document.addEventListener("mousedown", () => {
-    document.body.classList.remove("keyboard-nav");
-});
-
-// ========== CONSOLE MESSAGE ==========
-console.log("%c🚀 Bem-vindo ao meu portfólio!", "color: #00d9ff; font-size: 20px; font-weight: bold;");
-console.log("%cDesenvolvido com Python, FastAPI, Django e muito ☕", "color: #00ff41; font-size: 14px;");
-console.log("%cGitHub: https://github.com/thiagohlz", "color: #fff; font-size: 12px;");
-
-// ========== SERVICE WORKER (OPCIONAL) ==========
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('Service Worker registered'))
-            .catch(err => console.log('Service Worker registration failed'));
-    });
-}
