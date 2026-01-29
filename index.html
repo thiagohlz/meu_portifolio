@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thiago Elias - Desenvolvedor Backend especializado em Python, FastAPI, Django e desenvolvimento web">
-    <title>Thiago Elias | Backend Developer</title>
+    <meta name="description" content="Thiago Elias - Desenvolvedor Backend especializado em Python, FastAPI, Django, Data Science e desenvolvimento web">
+    <meta name="keywords" content="Python, FastAPI, Django, Streamlit, Pandas, Backend Developer, API Development">
+    <title>Thiago Elias | Backend & Data Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
 </head>
 <body>
     <!-- Cursor Personalizado -->
@@ -31,8 +33,12 @@
             <button class="theme-opt" style="background: #00d9ff; box-shadow: 0 0 10px #00d9ff;" data-theme="cyberpunk" title="Cyberpunk"></button>
             <button class="theme-opt" style="background: #00ff41; box-shadow: 0 0 10px #00ff41;" data-theme="matrix" title="Matrix"></button>
             <button class="theme-opt" style="background: #ffffff; box-shadow: 0 0 10px #ffffff;" data-theme="daylight" title="Claro"></button>
+            <button class="theme-opt" style="background: #ff006e; box-shadow: 0 0 10px #ff006e;" data-theme="neon" title="Neon"></button>
         </div>
     </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
 
     <!-- Background Animado -->
     <div class="bg-animation">
@@ -57,6 +63,7 @@
                 <li><a href="#home" class="nav-link">Início</a></li>
                 <li><a href="#about" class="nav-link">Sobre</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experiência</a></li>
                 <li><a href="#projects" class="nav-link">Projetos</a></li>
                 <li><a href="#contact" class="nav-link">Contato</a></li>
             </ul>
@@ -67,23 +74,43 @@
     <section id="home" class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <div class="hero-label">DESENVOLVEDOR BACKEND</div>
+                <div class="hero-label">DESENVOLVEDOR BACKEND & DATA</div>
                 <h1 class="hero-title">Thiago Elias</h1>
                 <p class="hero-subtitle">
-                    Desenvolvedor backend especializado em construir APIs robustas e escaláveis com Python. 
-                    Transformando requisitos de negócio em soluções tecnológicas eficientes.
+                    Desenvolvedor backend especializado em construir APIs robustas e aplicações de análise de dados. 
+                    Transformando requisitos em soluções tecnológicas eficientes com Python, FastAPI e ferramentas de Data Science.
                 </p>
                 <div class="tech-stack">
                     <span class="tech-badge">Python</span>
                     <span class="tech-badge">FastAPI</span>
                     <span class="tech-badge">Django</span>
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">Pandas</span>
                     <span class="tech-badge">Node.js</span>
-                    <span class="tech-badge">HTML/CSS</span>
-                    <span class="tech-badge">JavaScript</span>
                 </div>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">Ver Projetos</a>
                     <a href="#contact" class="btn btn-secondary">Fale Comigo</a>
+                    <a href="https://github.com/thiagohlz" target="_blank" rel="noopener" class="btn btn-outline">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Projetos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Tecnologias</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="2">0</span>
+                        <span class="stat-label">Anos Codando</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
@@ -92,6 +119,7 @@
                         <span class="dot"></span>
                         <span class="dot"></span>
                         <span class="dot"></span>
+                        <span class="code-title">main.py</span>
                     </div>
                     <div class="code-content" id="typewriter"></div>
                 </div>
@@ -109,15 +137,17 @@
             </h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Sou desenvolvedor backend apaixonado por criar sistemas robustos e escaláveis. Minha expertise está em <strong>Python</strong> e frameworks modernos como <strong>FastAPI, Django e Flask</strong>, desenvolvendo APIs RESTful que impulsionam aplicações web.</p>
+                    <p>Sou desenvolvedor backend apaixonado por criar sistemas robustos e escaláveis. Minha expertise está em <strong>Python</strong> e frameworks modernos como <strong>FastAPI, Django e Flask</strong>, desenvolvendo APIs RESTful que impulsionam aplicações web de alto desempenho.</p>
                     
-                    <p>Também trabalho com desenvolvimento frontend usando <strong>HTML, CSS e JavaScript</strong>, criando interfaces funcionais e responsivas. Tenho experiência com <strong>Node.js</strong>, onde desenvolvi bots de WhatsApp utilizando a biblioteca <strong>Baileys</strong>, automatizando processos e integrando sistemas de mensageria.</p>
+                    <p>Trabalho com <strong>análise e visualização de dados</strong> utilizando <strong>Pandas</strong> para manipulação eficiente de datasets e <strong>Streamlit</strong> para construir dashboards interativos e aplicações de data science. Transformo dados brutos em insights acionáveis através de análises estatísticas e visualizações intuitivas.</p>
                     
-                    <p>Com experiência em projetos acadêmicos e pessoais, já desenvolvi desde sistemas de autenticação completos até APIs de alta performance e automações inteligentes. Domino ferramentas essenciais como <strong>Git, GitHub e Linux</strong>, aplicando boas práticas de desenvolvimento e arquitetura de software.</p>
+                    <p>No frontend, desenvolvo interfaces funcionais e responsivas com <strong>HTML, CSS e JavaScript</strong>. Possuo experiência com <strong>Node.js</strong>, onde criei bots de WhatsApp com a biblioteca <strong>Baileys</strong>, automatizando processos e integrando sistemas de mensageria em tempo real.</p>
                     
-                    <p>Atualmente estudo <strong>Informática</strong> com foco em desenvolvimento backend, aprimorando constantemente minhas habilidades em design de APIs, otimização de bancos de dados e práticas DevOps. Busco sempre escrever código limpo, testável e bem documentado.</p>
+                    <p>Domino ferramentas essenciais como <strong>Git, GitHub e Linux</strong>, aplicando boas práticas de desenvolvimento, clean code e arquitetura de software. Tenho experiência com bancos de dados relacionais e NoSQL, otimização de queries e design de schemas eficientes.</p>
                     
-                    <p>Explore meus projetos no GitHub: <strong><a href="https://github.com/thiagohlz" target="_blank" rel="noopener">github.com/thiagohlz</a></strong></p>
+                    <p>Atualmente estudo <strong>Informática</strong> com foco em desenvolvimento backend e ciência de dados, aprimorando constantemente minhas habilidades em design de APIs, Machine Learning e práticas DevOps. Busco sempre escrever código limpo, testável e bem documentado.</p>
+                    
+                    <p>Explore meus projetos: <strong><a href="https://github.com/thiagohlz" target="_blank" rel="noopener">github.com/thiagohlz</a></strong></p>
                 </div>
             </div>
         </div>
@@ -131,129 +161,251 @@
                 Habilidades Técnicas
                 <div class="title-line"></div>
             </h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="2" y="2" width="20" height="8" rx="2"></rect>
-                            <rect x="2" y="14" width="20" height="8" rx="2"></rect>
-                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            <div class="skills-categories">
+                <!-- Backend -->
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
-                    </div>
-                    <h3>Backend Development</h3>
-                    <p>APIs RESTful, autenticação JWT, validação de dados, arquitetura MVC, microsserviços</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+                        Backend Development
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">FastAPI</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Django</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Flask</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
+                <!-- Data Science -->
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="20" x2="12" y2="10"></line>
+                            <line x1="18" y1="20" x2="18" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="16"></line>
                         </svg>
-                    </div>
-                    <h3>Python & Frameworks</h3>
-                    <p>FastAPI, Django, Flask, SQLAlchemy, Pydantic, async/await</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
+                        Data Science & Analytics
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Pandas</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Streamlit</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">NumPy</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Data Visualization</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <!-- Frontend -->
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                             <polyline points="2 17 12 22 22 17"></polyline>
                             <polyline points="2 12 12 17 22 12"></polyline>
                         </svg>
-                    </div>
-                    <h3>Frontend & Node.js</h3>
-                    <p>HTML5, CSS3, JavaScript ES6+, Node.js, Baileys, automação WhatsApp</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 75%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                        </svg>
-                    </div>
-                    <h3>Banco de Dados</h3>
-                    <p>SQL Server, PostgreSQL, MySQL, queries otimizadas, modelagem de dados, migrations</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                    </div>
-                    <h3>DevOps & Ferramentas</h3>
-                    <p>Git, GitHub, Linux, Docker, CI/CD, versionamento semântico, deploy</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 75%"></div>
+                        Frontend & Tools
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML/CSS</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Git & GitHub</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projetos Section -->
-    <section id="projects" class="projects section">
+    <!-- Experience Timeline -->
+    <section id="experience" class="experience section">
         <div class="container">
             <h2 class="section-title">
                 <span class="title-number">03.</span>
+                Experiência & Projetos
+                <div class="title-line"></div>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Presente</div>
+                        <h3>Desenvolvimento de APIs RESTful</h3>
+                        <p>Criação de APIs escaláveis com FastAPI, implementando autenticação JWT, documentação automática e testes unitários. Foco em performance e boas práticas de desenvolvimento.</p>
+                        <div class="timeline-tags">
+                            <span>FastAPI</span>
+                            <span>PostgreSQL</span>
+                            <span>JWT</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <h3>Dashboards Interativos com Streamlit</h3>
+                        <p>Desenvolvimento de aplicações de visualização de dados usando Streamlit e Pandas para análise de grandes datasets, criando dashboards interativos para tomada de decisões.</p>
+                        <div class="timeline-tags">
+                            <span>Streamlit</span>
+                            <span>Pandas</span>
+                            <span>Plotly</span>
+                            <span>Data Science</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>Automação com WhatsApp Bots</h3>
+                        <p>Criação de bots de WhatsApp utilizando Node.js e Baileys para automação de atendimento, integração com APIs externas e processamento de mensagens em tempo real.</p>
+                        <div class="timeline-tags">
+                            <span>Node.js</span>
+                            <span>Baileys</span>
+                            <span>WebSocket</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span>
                 Projetos em Destaque
                 <div class="title-line"></div>
             </h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card featured">
                     <div class="project-header">
                         <div class="project-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
                             </svg>
                         </div>
-                        <h3>Sistema de API REST Completo</h3>
+                        <h3>API de E-commerce com FastAPI</h3>
+                        <span class="project-label">Destaque</span>
                     </div>
-                    <p>API robusta com FastAPI incluindo autenticação JWT, validação Pydantic, documentação automática Swagger e testes unitários.</p>
+                    <p>API completa para e-commerce com gerenciamento de produtos, carrinho de compras, processamento de pedidos e integração com gateways de pagamento. Inclui autenticação, autorização e documentação interativa.</p>
                     <div class="project-tags">
                         <span class="tag">FastAPI</span>
-                        <span class="tag">JWT</span>
                         <span class="tag">PostgreSQL</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Stripe API</span>
                         <span class="tag">Docker</span>
                     </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
+                    <div class="project-links">
+                        <a href="https://github.com/thiagohlz" target="_blank" rel="noopener" class="project-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                                <path d="M3 9h18"></path>
-                                <path d="M9 21V9"></path>
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                             </svg>
-                        </div>
-                        <h3>Sistema de Gerenciamento Web</h3>
-                    </div>
-                    <p>Plataforma completa desenvolvida com Django, incluindo painel administrativo, autenticação de usuários e sistema de permissões.</p>
-                    <div class="project-tags">
-                        <span class="tag">Django</span>
-                        <span class="tag">SQLite</span>
-                        <span class="tag">Bootstrap</span>
-                        <span class="tag">REST</span>
+                            Código
+                        </a>
                     </div>
                 </div>
 
@@ -261,20 +413,19 @@
                     <div class="project-header">
                         <div class="project-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                                <line x1="12" y1="20" x2="12" y2="10"></line>
+                                <line x1="18" y1="20" x2="18" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="16"></line>
                             </svg>
                         </div>
-                        <h3>Microserviço de Notificações</h3>
+                        <h3>Dashboard Analítico com Streamlit</h3>
                     </div>
-                    <p>Sistema de envio de notificações assíncronas com Flask, filas de mensagens e integração com APIs externas.</p>
+                    <p>Aplicação interativa para análise de dados usando Streamlit e Pandas, com visualizações dinâmicas, filtros customizáveis e exportação de relatórios em múltiplos formatos.</p>
                     <div class="project-tags">
-                        <span class="tag">Flask</span>
-                        <span class="tag">Celery</span>
-                        <span class="tag">Redis</span>
-                        <span class="tag">API</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Plotly</span>
+                        <span class="tag">NumPy</span>
                     </div>
                 </div>
 
@@ -285,36 +436,14 @@
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                             </svg>
                         </div>
-                        <h3>Bot de WhatsApp Automatizado</h3>
+                        <h3>Bot WhatsApp Inteligente</h3>
                     </div>
-                    <p>Bot inteligente desenvolvido com Node.js e Baileys para automação de mensagens, atendimento ao cliente e integração com APIs externas.</p>
+                    <p>Sistema automatizado de atendimento via WhatsApp com processamento de comandos, integração com banco de dados e envio programado de mensagens usando Baileys.</p>
                     <div class="project-tags">
                         <span class="tag">Node.js</span>
                         <span class="tag">Baileys</span>
-                        <span class="tag">WhatsApp</span>
-                        <span class="tag">Automation</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                        </div>
-                        <h3>CLI Tool para Automação</h3>
-                    </div>
-                    <p>Ferramenta de linha de comando em Python para automatizar tarefas repetitivas, processar arquivos e integrar sistemas.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Click</span>
-                        <span class="tag">Automation</span>
-                        <span class="tag">Linux</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Express</span>
                     </div>
                 </div>
 
@@ -325,14 +454,14 @@
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                             </svg>
                         </div>
-                        <h3>Sistema de Autenticação Seguro</h3>
+                        <h3>Sistema de Autenticação JWT</h3>
                     </div>
-                    <p>Implementação completa de autenticação com bcrypt, tokens JWT, refresh tokens e controle de sessões.</p>
+                    <p>Implementação robusta de autenticação com JWT, refresh tokens, bcrypt para hash de senhas e controle granular de permissões com diferentes níveis de acesso.</p>
                     <div class="project-tags">
                         <span class="tag">FastAPI</span>
                         <span class="tag">JWT</span>
                         <span class="tag">Bcrypt</span>
-                        <span class="tag">Security</span>
+                        <span class="tag">OAuth2</span>
                     </div>
                 </div>
 
@@ -340,18 +469,37 @@
                     <div class="project-header">
                         <div class="project-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <line x1="12" y1="1" x2="12" y2="23"></line>
-                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                             </svg>
                         </div>
-                        <h3>API de Pagamentos</h3>
+                        <h3>ETL Pipeline com Python</h3>
                     </div>
-                    <p>Integração com gateways de pagamento, webhooks, processamento assíncrono e logs detalhados de transações.</p>
+                    <p>Pipeline de extração, transformação e carga de dados de múltiplas fontes, com validação automática, tratamento de erros e agendamento de tarefas.</p>
                     <div class="project-tags">
-                        <span class="tag">Django</span>
-                        <span class="tag">Webhooks</span>
-                        <span class="tag">Async</span>
-                        <span class="tag">MySQL</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">SQLAlchemy</span>
+                        <span class="tag">Airflow</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>API de Análise de Sentimentos</h3>
+                    </div>
+                    <p>API para processamento de linguagem natural e análise de sentimentos em textos, com suporte a múltiplos idiomas e relatórios estatísticos detalhados.</p>
+                    <div class="project-tags">
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">NLTK</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Pandas</span>
                     </div>
                 </div>
             </div>
@@ -362,7 +510,7 @@
     <section id="contact" class="contact section">
         <div class="container">
             <h2 class="section-title">
-                <span class="title-number">04.</span>
+                <span class="title-number">05.</span>
                 Vamos Conversar?
                 <div class="title-line"></div>
             </h2>
